@@ -81,7 +81,6 @@ std::pair<Car*, Manual*> ClientCode4(Director& director) {
 	CarBuilder* cbuilder = new CarBuilder();
 	ManualBuilder* mbuilder = new ManualBuilder();
 
-	std::cout << "Luxury Car:\n"; 
 	director.makeLuxuryCar(cbuilder);
 	Car* luxuryCar = cbuilder->GetProduct();
 	luxuryCar->listFeatures(); // use
