@@ -78,18 +78,21 @@ void ClientCode3(Director& director) {
 
 std::pair<Car*, Manual*> ClientCode4(Director& director) {
 
-	auto cbuilder = std::make_shared<CarBuilder>();
-	auto mbuilder = std::make_shared<ManualBuilder>();
+	CarBuilder* cbuilder = new CarBuilder();
+	ManualBuilder* mbuilder = new ManualBuilder();
 
 	std::cout << "Luxury Car:\n"; 
-	director.makeLuxuryCar(cbuilder.get());
+	director.makeLuxuryCar(cbuilder);
 	Car* luxuryCar = cbuilder->GetProduct();
 	luxuryCar->listFeatures(); // use
 	
 
-	director.makeLuxuryCar(mbuilder.get());
+	director.makeLuxuryCar(mbuilder);
 	Manual* luxuryManual = mbuilder->GetProduct();
 	luxuryManual->listFeatures(); // use
+
+	delete cbuilder;
+	delete mbuilder;
 	
 	return { luxuryCar, luxuryManual };
 }
