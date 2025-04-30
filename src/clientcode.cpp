@@ -83,12 +83,10 @@ std::pair<Car*, Manual*> ClientCode4(Director& director) {
 
 	director.makeLuxuryCar(cbuilder);
 	Car* luxuryCar = cbuilder->GetProduct();
-	luxuryCar->listFeatures(); // use
 	
 
 	director.makeLuxuryCar(mbuilder);
 	Manual* luxuryManual = mbuilder->GetProduct();
-	luxuryManual->listFeatures(); // use
 
 	delete cbuilder;
 	delete mbuilder;
